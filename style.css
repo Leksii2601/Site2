@@ -1,0 +1,250 @@
+body{
+  background-color: hsl(210, 46%, 95%);
+  height: 98vh;
+  width: 98vw;
+  margin:0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 0;
+}
+.Overall{
+  display: grid;
+  grid-template-columns: 250px 450px;
+  grid-template-rows: 250px;
+  justify-content: center;
+z-index: 1;
+}
+.photo img {
+  height: 250px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+}
+.white-box{
+    background-color: white;
+    font-family: 'Manrope';
+    padding: 10px 30px 10px 20px;
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+.heading{
+  color:hsl(214, 17%, 51%);
+  font-size:14px;
+}
+.textInside{
+  color:hsl(212, 23%, 69%);
+  font-size:14px;
+}
+.wholeSocialMedia img{
+  height: 35px;
+  border-radius:20px;
+}
+.wholeSocialMedia{
+  height: 35px;
+  width: 400px;
+  display: flex;
+  align-items: center;
+  font-size:14px;
+
+}
+.socialMedia{
+  display: flex;
+  margin-top:10px;
+}
+.info{
+  margin-left:10px;
+}
+h4{
+  margin-bottom: 0;
+  margin-top: 0;
+}
+.shareButton img {
+  height:13px;
+  width: 15px;
+  transition: filter 0.3s;
+}
+.shareButton{
+  background-color: hsl(210, 46%, 95%);
+  height: 30px;
+  width: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  z-index: 2;
+}
+.shareButton:hover{
+  background-color:hsl(214, 17%, 51%);
+}
+.shareButton:hover img{
+  filter: brightness(1000%);
+}
+  .social-icons{
+  background-color: hsl(217, 19%, 35%);
+  width: 200px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 20px;
+  font-size: 13px;
+  color:hsl(210, 46%, 95%);
+  font-weight: lighter;
+  display: none;
+  position: absolute;
+  top: 385px;
+  left: 69%;
+  transform: translateX(-50%);
+  padding: 10px;
+}
+.social-icons::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 49%;
+  transform: translateX(-50%);
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid hsl(217, 19%, 35%);
+}
+.social-icons img{
+  height: 15px;
+}
+.social-icons img {
+  width: 15px;
+  height: 15px;
+  transition: transform 0.3s;
+}
+.social-icons img:hover {
+  transform: scale(1.1);
+}
+.social-icons.show {
+  display: flex;
+  animation:0.5s ease-in-out;
+}
+/* Базові стилі залишаються такими ж */
+
+@media screen and (max-width: 768px) {
+  body {
+    height: auto;
+    padding: 20px;
+  }
+
+  .Overall {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    max-width: 330px;
+    margin: 0 auto;
+  }
+
+  .photo img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 0;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 0;
+  }
+
+  .white-box {
+    border-radius: 0;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    padding: 20px;
+    margin-top:-5px;
+  }
+
+  .heading h2 {
+    font-size: 16px;
+    margin-top: 0;
+  }
+
+  .wholeSocialMedia {
+    width: auto;
+    flex: 1;
+  }
+.shareButton{
+  height: 33px;
+}
+  .socialMedia {
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    margin-top:30px;
+  }
+
+  .social-icons {
+    top: auto;
+    bottom: -20px;
+    left: 50%;
+    width: 330px;
+    max-width: 330px;
+    border-radius: 0;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    padding: 26px;
+    box-sizing: border-box;
+  }
+  .social-icons::after{
+    display: none;
+  }
+  .social-icons.show{
+    justify-content: flex-start;
+  }
+  a{
+    margin-left:  20px;
+
+  }
+
+
+  /* Додаємо темний фон для всього нижнього блоку при відкритих іконках шарингу */
+  .socialMedia.active {
+    background-color: hsl(217, 19%, 35%);
+    margin: -20px;
+    padding: 20px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+  }
+
+  /* Змінюємо колір тексту при активному стані */
+  .socialMedia.active .info {
+    color: white;
+  }
+
+  /* Змінюємо стиль кнопки share при активному стані */
+  .socialMedia.active .shareButton {
+    background-color: hsl(214, 17%, 51%);
+  }
+
+  .socialMedia.active .shareButton img {
+    filter: brightness(1000%);
+  }
+}
+
+/* Додаткові медіа-запити для дуже малих екранів */
+@media screen and (max-width: 375px) {
+  .Overall {
+    max-width: 280px;
+  }
+
+  .white-box {
+    padding: 15px;
+  }
+
+  .heading h2 {
+    font-size: 15px;
+  }
+
+  .textInside {
+    font-size: 13px;
+  }
+
+  .social-icons {
+    max-width: 280px;
+  }
+}
