@@ -78,6 +78,7 @@ h4{
   cursor: pointer;
   transition: background-color 0.3s;
   z-index: 2;
+  animation:0.4s ease;
 }
 .shareButton:hover{
   background-color:hsl(214, 17%, 51%);
