@@ -66,6 +66,7 @@ h4{
   height:13px;
   width: 15px;
   transition: filter 0.3s;
+  transition: transform 0.3s;
 }
 .shareButton{
   background-color: hsl(210, 46%, 95%);
@@ -78,13 +79,15 @@ h4{
   cursor: pointer;
   transition: background-color 0.3s;
   z-index: 2;
-  animation:0.4s ease;
+  transition: transform 0.3s;
 }
 .shareButton:hover{
   background-color:hsl(214, 17%, 51%);
+  transform: scale(1.1);
 }
 .shareButton:hover img{
   filter: brightness(1000%);
+  transform: scale(1.1);
 }
   .social-icons {
   --translateX: 125%;
@@ -103,6 +106,18 @@ h4{
     top: 385px;
     padding: 10px;
     transform: translate(var(--translateX), var(--translateY));
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+    transform: translate(var(--translateX), var(--translateY));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    transform: translate(var(--translateX), var(--translateY));
+  }
 }
 .social-icons::after {
   content: '';
@@ -127,7 +142,7 @@ h4{
 }
 .social-icons.show {
   display: flex;
-  animation:0.5s ease-in-out;
+  animation: fadeIn 0.9s ease-out;
 }
 /* Базові стилі залишаються такими ж */
 
